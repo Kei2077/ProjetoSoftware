@@ -27,14 +27,14 @@ public class Main {
         xTudo.exibir();
 
         System.out.println("============");
-        carro tr4 = new carro();
+        Carro tr4 = new Carro();
         tr4.cor = "preta";
         tr4.ano = 2016;
         tr4.marca = "jooj";
         tr4.modelo = "suv";
         tr4.exibirInformacoes();
         System.out.println("============");
-        carro sw = new carro();
+        Carro sw = new Carro();
         sw.cor = "branca";
         sw.ano = 2018;
         sw.marca = "jaaj";
