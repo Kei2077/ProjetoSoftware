@@ -25,6 +25,21 @@ public class Main {
         System.out.println("============");
         xEgg.exibir();
         xTudo.exibir();
+
+        System.out.println("============");
+        carro tr4 = new carro();
+        tr4.cor = "preta";
+        tr4.ano = 2016;
+        tr4.marca = "jooj";
+        tr4.modelo = "suv";
+        tr4.exibirInformacoes();
+        System.out.println("============");
+        carro sw = new carro();
+        sw.cor = "branca";
+        sw.ano = 2018;
+        sw.marca = "jaaj";
+        sw.modelo = "suv";
+        sw.exibirInformacoes();
     }
 }
 
