@@ -15,6 +15,35 @@
             this.disponivel = estoque > 1;
         }
 
+        private void verificaDisponivel(){
+            this.disponivel = this.estoque > 0;
+        }
+
+        public boolean decrementarEstoque(int quantidade){
+            if (quantidade > 0 && quantidade <= this.estoque) {
+                this.estoque -= quantidade;
+                this.verificaDisponivel();
+                return true;
+            } else {
+                return false;
+            }
+        }
+
+        public void aumentarEstoque(int quantidade) {
+            if (quantidade > 0) {
+                this.estoque += quantidade;
+                verificaDisponivel();
+                System.out.println("Valor aumentado");
+            } else {
+                System.out.println("erro, precisa ser maior que zero!");
+            }
+        }
+
+        public double ValorTotal(int quantidade){
+            return this.valor * quantidade;
+
+        }
+
         @Override
         public String toString() {
             return "lanche{" +

@@ -17,6 +17,25 @@ public class main {
             String opcao = sc.nextLine();
 
             switch  (opcao) {
+                case "1":
+                    System.out.println("Quantos lanches voce deseja: ");
+                    int quantidade = sc.nextInt();
+                    sc.nextLine();
+
+                    if (x_burguer.decrementarEstoque(quantidade)) {
+                        System.out.println(" voce pediu " + quantidade + " " + x_burguer.getNome() +
+                                " e o valor final, foi de R$ " + x_burguer.ValorTotal(quantidade));
+                    } else {
+                        System.out.println("pedido nao realizado");
+                        System.out.println("quantidade invalida");
+                    }
+                    break;
+                case "2":
+                    System.out.println("Quantos lanches voce deseja adicionar: ");
+                    int quantidadeEstoque = sc.nextInt();
+                    sc.nextLine();
+                    x_burguer.aumentarEstoque(quantidadeEstoque);
+                    break;
                 case "3":
                     System.out.println(x_burguer.toString());
                     break;
