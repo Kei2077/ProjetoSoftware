@@ -47,7 +47,11 @@
         }
 
         public void setDescricao(String descricao) {
-            this.descricao = descricao;
+            if (descricao.isBlank()){
+                System.out.println("Informe uma descricao valida");
+            } else {
+                this.descricao = descricao;
+            }
         }
 
         public void setNome(String nome) {
@@ -55,6 +59,11 @@
         }
 
         public void setValor(double valor) {
-            this.valor = valor;
+            if (valor <= 0){
+                System.out.println("informe um valor maior que zero!");
+            } else {
+                this.valor = valor;
+                System.out.println("Valor alterado com sucesso");
+            }
         }
     }

@@ -15,6 +15,27 @@ public class main {
 
             System.out.println("digite a opcao desejada");
             String opcao = sc.nextLine();
+
+            switch  (opcao) {
+                case "3":
+                    System.out.println(x_burguer.toString());
+                    break;
+                case "4":
+                    System.out.println("O lanche" + x_burguer.getNome() + " custa R$ " + x_burguer.getValor());
+                    System.out.println("Informe o novo valor do lanche: ");
+                    double valor = sc.nextDouble();
+                    sc.nextLine();
+                    x_burguer.setValor(valor);
+                    break;
+                case "5":
+                    System.out.println("O lanche" + x_burguer.getNome() + " tem a seguinte descricao " + x_burguer.getDescricao());
+                    System.out.println("Informe o nova descricao do lanche: ");
+                    String descricao = sc.nextLine();
+                    x_burguer.setDescricao(descricao);
+                default:
+                    System.out.println("Informe uma opcao valida");
+                    break;
+            }
         }
     }
 }
