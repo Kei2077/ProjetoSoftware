@@ -56,6 +56,7 @@ public class ExcessaoTXT {
                         System.out.println("Erro ao ler o arquivo");
                         System.out.println("detalhe: "  + e.getMessage());
                     }
+                    break;
             }
         }
     }
