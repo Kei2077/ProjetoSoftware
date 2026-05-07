@@ -1,3 +1,4 @@
+drop database loja;
 create database loja;
 use loja;
 
@@ -10,3 +11,5 @@ CREATE TABLE roupa (
     preco DOUBLE,
     quantidade int
 );
+
+select * from roupa;
