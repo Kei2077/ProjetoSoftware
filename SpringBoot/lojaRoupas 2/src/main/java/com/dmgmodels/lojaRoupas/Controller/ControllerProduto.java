@@ -1,8 +1,11 @@
 package com.dmgmodels.lojaRoupas.Controller;
 
-import com.dmgmodels.lojaRoupas.model.DadosCadastroRoupa;
+import com.dmgmodels.lojaRoupas.dto.DadosAtualizarRoupa;
+import com.dmgmodels.lojaRoupas.dto.DadosCadastroRoupa;
 import com.dmgmodels.lojaRoupas.model.Roupa;
 import com.dmgmodels.lojaRoupas.repository.RoupaRepository;
+import jakarta.transaction.Transactional;
+import org.hibernate.mapping.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -24,4 +27,24 @@ public class ControllerProduto {
     public List<Roupa> listarProdutos(){
         return roupaRepository.findAll();
     }
+
+    @GetMapping("/nomeProduto/{nomeProduto}")
+    public List<Roupa> listarProdutosPorNome(@PathVariable String nomeProduto){
+        roupaRepository.findByNomeProduto((nomeProduto);
+    }
+
+    @DeleteMapping("{id}")
+    @Transactional
+    public void deleteProduto(@PathVariable Long id){
+        roupaRepository.deleteById(id);
+    }
+
+    @PutMapping
+    @Transactional
+    public void AtualizarProduto(@RequestBody DadosAtualizarRoupa novosDados){
+        var Roupa = roupaRepository.getReferenceById(novosDados.id());
+        roupa.atualizarRoupa(novosDados);
+        System.out.printf(roupa.toString());
+    }
+
 }
